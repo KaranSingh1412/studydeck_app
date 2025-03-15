@@ -55,6 +55,7 @@ class FlashcardWidgetModel extends BaseViewModel {
     await _dialogService.showCustomDialog(
       variant: DialogType.cardRating,
       barrierDismissible: true,
+      data: {'cardId': _flashcard.id},
     );
   }
 }

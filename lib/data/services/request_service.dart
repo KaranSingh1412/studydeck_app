@@ -272,6 +272,27 @@ class RequestService {
     return res['cards'];
   }
 
+  // type: quality or relevance
+  Future<bool> rateFlashcard(
+    Authenticator auth, {
+    required int cardId,
+    required int rating,
+    required String type,
+  }) async {
+    final requestBody = {
+      'card_id': cardId,
+      'rating': rating,
+      'type': type,
+    };
+    final res = await _request(
+      'POST',
+      '/card/rate',
+      auth: auth,
+      body: requestBody,
+    );
+    return res['status'] == 'success';
+  }
+
   /* ===================
    * THIRD PARTY
    * ===================

@@ -100,4 +100,18 @@ class FlashcardService {
       ),
     );
   }
+
+  Future<bool> rateFlashcard(
+      {required int flashcardId,
+      required int rating,
+      required String type}) async {
+    return await request(
+      onExecute: _requestService.rateFlashcard(
+        _authService.getAuthenticator(),
+        cardId: flashcardId,
+        rating: rating,
+        type: type,
+      ),
+    );
+  }
 }

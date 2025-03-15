@@ -36,10 +36,9 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
             child: Form(
               key: viewModel.formKey,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  verticalSpaceLarge,
-                  verticalSpaceMassive,
                   Text(
                     'Willkommen bei StudyDeck',
                     style: context.theme.textTheme.headlineMedium,

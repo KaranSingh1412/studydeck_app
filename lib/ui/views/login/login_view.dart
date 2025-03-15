@@ -35,11 +35,9 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
             child: Form(
               key: viewModel.formKey,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  verticalSpaceMassive,
-                  verticalSpaceLarge,
-                  verticalSpaceLarge,
                   Text(
                     'Willkommen zurück!',
                     style: context.theme.textTheme.headlineMedium,

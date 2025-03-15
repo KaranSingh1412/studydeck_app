@@ -94,16 +94,6 @@ class FlashcardWidget extends StackedView<FlashcardWidgetModel> {
                     ),
                   ),
                   PopupMenuItem(
-                    value: 'ai',
-                    child: Row(
-                      children: [
-                        Icon(Icons.help_outline),
-                        horizontalSpaceSmall,
-                        Text('Ask AI'),
-                      ],
-                    ),
-                  ),
-                  PopupMenuItem(
                     value: 'delete',
                     child: Row(
                       children: [
