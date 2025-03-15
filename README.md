@@ -18,6 +18,8 @@ Ein Beispiel Output sähe wie folgt aus:<br/>
 }
 ```
 
+Projekt erstellt von: 
+
 Ahmad Zaiour<br/>
 Karan Soni<br/>
 Samreen Ahmed<br/>
