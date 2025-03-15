@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:studydeck_app/ui/utils/helper/edge_insets_helper.dart';
 import 'package:studydeck_app/ui/widgets/custom_widgets/custom_settings_card.dart';
+import 'package:studydeck_app/ui/widgets/custom_widgets/custom_settings_listtile.dart';
 
 import 'settings_viewmodel.dart';
 
@@ -47,6 +48,14 @@ class SettingsView extends StackedView<SettingsViewModel> {
                       subtitle: '**********',
                       icon: Icons.lock_outline_rounded,
                       onTapCallback: () {},
+                    ),
+                    CustomSettingsListtile(
+                      title: 'Logout',
+                      trailing: Icons.logout,
+                      iconColor: Colors.red,
+                      onTapCallback: () async {
+                        await viewModel.logout();
+                      },
                     ),
                     // Text(viewModel.data!.id.toString()),
                   ],

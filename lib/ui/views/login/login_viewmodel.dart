@@ -17,6 +17,7 @@ class LoginViewModel extends FormViewModel {
     setBusy(true);
     try {
       await _authService.logIn(emailValue!, passwordValue!);
+      await _navigationService.clearStackAndShow(Routes.homeView);
       setBusy(false);
     } catch (error) {
       print(error);

@@ -32,22 +32,11 @@ class AuthService {
     String password,
   ) async {
     if (isLoggedIn()) return;
-    final sessionToken = await _requestManager.createUser(
-      name,
-      email,
-      password,
-    );
+    final sessionToken =
+        await _requestManager.createUser(name, email, password);
 
     _storageService.setSessionToken(sessionToken);
   }
-
-  // Future<void> loginWithQr(String qrCodeSessionToken) async {
-  //   assertLoggedIn();
-  //   final sessionToken = _storageService.getSessionToken();
-  //   if (sessionToken == null && await getSession() == null) return;
-
-  //   await _requestManager.authorizeQrSession(sessionToken!, qrCodeSessionToken);
-  // }
 
   Future<void> logout() async {
     assertLoggedIn();
@@ -55,7 +44,7 @@ class AuthService {
     _requestManager.deleteSession(auth);
     _storageService.deleteSessionToken();
     _localLogout();
-    // _navigationService.clearStackAndShow(Routes.titlePageView);
+    _navigationService.clearStackAndShow(Routes.loginView);
   }
 
   void assertLoggedIn() {
